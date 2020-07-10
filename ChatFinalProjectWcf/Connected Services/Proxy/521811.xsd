@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Common.common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Common.common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/:5218?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/:5218?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models.Cell" />
+  <xs:complexType name="MessageCommon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listOfMessages" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageCommon" nillable="true" type="tns:MessageCommon" />
+  <xs:complexType name="UserCommon">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listOfUser" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserCommon" nillable="true" type="tns:UserCommon" />
+  <xs:complexType name="GameCommon">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Models.Cell" minOccurs="0" name="Cells" nillable="true" type="q3:ArrayOfCell" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiceNums" nillable="true" type="q4:ArrayOfint" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiceNumsImg" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MessageForPlayer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TurnOf" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GameCommon" nillable="true" type="tns:GameCommon" />
+</xs:schema>
